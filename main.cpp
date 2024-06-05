@@ -200,7 +200,6 @@ void updateAcroform(PdfMemDocument& document) {
                         // Remove the CA key
                         default_MK->GetDictionary().RemoveKey(PdfName("CA"));
                     }
-
                 }
                 // Work with the appearance settings
                 PdfObject* default_AP = dict.GetKey(PdfName("AP"));
