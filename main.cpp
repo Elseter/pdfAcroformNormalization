@@ -202,7 +202,6 @@ void updateAcroform(PdfMemDocument& document) {
                     }
 
                 }
-
                 // Work with the appearance settings
                 PdfObject* default_AP = dict.GetKey(PdfName("AP"));
                  if (default_AP) {
