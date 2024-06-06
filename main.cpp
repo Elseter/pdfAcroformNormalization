@@ -527,10 +527,10 @@ int main(){
 
     try{
         PdfMemDocument doc;
-        doc.Load("malicious.pdf");
+        doc.Load(funkyPDF);
         updateAcroform(doc);
         removeJavaScript(doc);
-        clearMetadata(doc, "malicious.pdf");
+        clearMetadata(doc, "StartOutPDF.pdf");
 
         doc.Save("post_mal.pdf");
 

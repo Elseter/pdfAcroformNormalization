@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.28)
+project(normCPP)
+
+# Set C++17 as required
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+list(APPEND CMAKE_PREFIX_PATH "/app/podofo/build")
+include_directories(/app/podofo/src /app/podofo/build/src/podofo)
+link_directories(/app/podofo/build/target)
+
+find_package(podofo REQUIRED)
+
+add_executable(normCPP main.cpp)
+
+target_link_libraries(normCPP podofo)
+
+target_include_directories(normCPP PRIVATE ${PODOFO_INCLUDE_DIRS})

@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_untitled: phony || CMakeFiles/untitled.d
 build CMakeFiles/untitled.dir/main.cpp.o: CXX_COMPILER__untitled_unscanned_Debug /Users/rileyking/CLionProjects/untitled/main.cpp || cmake_object_order_depends_target_untitled
   DEP_FILE = CMakeFiles/untitled.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  INCLUDES = -I/opt/homebrew/Cellar/podofo/0.10.3/include -I/opt/homebrew/Cellar/mupdf/1.23.11_1/include
+  INCLUDES = -I/opt/homebrew/Cellar/podofo/0.10.3/include
   OBJECT_DIR = CMakeFiles/untitled.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled.dir
 
@@ -66,8 +66,8 @@ build CMakeFiles/untitled.dir/main.cpp.o: CXX_COMPILER__untitled_unscanned_Debug
 
 build untitled: CXX_EXECUTABLE_LINKER__untitled_Debug CMakeFiles/untitled.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
-  LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/Cellar/podofo/0.10.3/lib -Wl,-rpath,/opt/homebrew/Cellar/mupdf/1.23.11_1/lib  -lpodofo  -lmupdf
-  LINK_PATH = -L/opt/homebrew/Cellar/podofo/0.10.3/lib   -L/opt/homebrew/Cellar/mupdf/1.23.11_1/lib
+  LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/Cellar/podofo/0.10.3/lib  -lpodofo
+  LINK_PATH = -L/opt/homebrew/Cellar/podofo/0.10.3/lib
   OBJECT_DIR = CMakeFiles/untitled.dir
   POST_BUILD = :
   PRE_LINK = :
