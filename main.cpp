@@ -519,20 +519,25 @@ void updateAcroform(PdfMemDocument& document) {
     }
 }
 
-int main(){
-    const auto* normalizedPDF = "normalized.pdf";
-    const auto* funkyPDF = "StartOutPDF.pdf";
-    const auto* output = "nofields.pdf";
-    const auto* broken = "broken.pdf";
+int main(int argc, char* argv[]) {
+    if (argc != 3) { // Check if there are exactly two arguments (argv[1] and argv[2])
+        std::cerr << "Usage: " << argv[0] << " <input file> <output file>" << std::endl;
+        return 1;
+    }
+
+    const char* inputFileName = argv[1];
+    const char* outputFileName = argv[2];
 
     try{
         PdfMemDocument doc;
-        doc.Load(funkyPDF);
+        doc.Load(inputFileName);
         updateAcroform(doc);
         removeJavaScript(doc);
-        clearMetadata(doc, "StartOutPDF.pdf");
+        clearMetadata(doc, inputFileName);
 
-        doc.Save("post_mal.pdf");
+        // Save the document in a subfolder called normalized
+        string outfile = "normalized/" + string(outputFileName);
+        doc.Save(outfile);
 
 
     }catch (const PdfError& e) {

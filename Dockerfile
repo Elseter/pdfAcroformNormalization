@@ -81,8 +81,33 @@ COPY radioButton_AP_off.txt /app/build
 
 # Build the application
 WORKDIR /app/build
+RUN mkdir normalized
+
 RUN cmake .. && \
-    make \
+    make
+
+# -----------------------------------------------
+# Install Python and necessary packages
+
+RUN apt-get update && apt-get install -y --no-install-recommends --assume-yes \
+    python3 \
+    python3-pip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install necessary Python packages
+RUN pip3 install flask requests
+
+# Copy over the Python files
+COPY webApp.py /app/
+
+# Expose the port
+EXPOSE 5000
+
+WORKDIR /app
+
+# Run the application
+CMD ["python3", "webApp.py"]
 
 
 
